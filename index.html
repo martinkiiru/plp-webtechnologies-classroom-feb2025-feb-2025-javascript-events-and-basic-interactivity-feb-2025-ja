@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Pet Playground</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add a fun font from Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Digital Pet</h1>
+            <p>Interact with your pet and see what happens!</p>
+        </header>
+
+        <!-- Pet interaction section -->
+        <section class="pet-section">
+            <div class="pet-container">
+                <img id="pet" src="/placeholder.svg?height=200&width=200" alt="Digital Pet">
+                <div id="pet-status">Pet is waiting for interaction...</div>
+                <div id="secret-message" class="hidden">You found the secret! Double-click love!</div>
+            </div>
+            
+            <div class="controls">
+                <button id="feed-btn" class="btn">Feed Pet</button>
+                <button id="play-btn" class="btn">Play with Pet</button>
+                <button id="pet-btn" class="btn">Pet</button>
+                <p class="hint">Hint: Try pressing the 'S' key to make your pet sleep!</p>
+            </div>
+        </section>
+
+        <!-- Interactive elements section -->
+        <section class="interactive-section">
+            <h2>Pet Care Guide</h2>
+            
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="feeding">Feeding</button>
+                    <button class="tab-btn" data-tab="playing">Playing</button>
+                    <button class="tab-btn" data-tab="health">Health</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="feeding" class="tab-pane active">
+                        <h3>Feeding Your Pet</h3>
+                        <p>Feed your digital pet regularly by clicking the "Feed Pet" button. A well-fed pet is a happy pet!</p>
+                    </div>
+                    <div id="playing" class="tab-pane">
+                        <h3>Playing With Your Pet</h3>
+                        <p>Play with your pet to keep it entertained and active. Regular play sessions improve your pet's mood.</p>
+                    </div>
+                    <div id="health" class="tab-pane">
+                        <h3>Pet Health</h3>
+                        <p>Monitor your pet's health by checking its status regularly. A healthy pet will respond enthusiastically to interactions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Image Gallery -->
+            <div class="gallery-section">
+                <h3>Pet Gallery</h3>
+                <div class="gallery">
+                    <div class="gallery-nav">
+                        <button id="prev-btn" class="gallery-btn">❮</button>
+                        <button id="next-btn" class="gallery-btn">❯</button>
+                    </div>
+                    <div class="gallery-container">
+                        <img class="gallery-img active" src="/placeholder.svg?height=150&width=200" alt="Pet Image 1">
+                        <img class="gallery-img" src="/placeholder.svg?height=150&width=200" alt="Pet Image 2">
+                        <img class="gallery-img" src="/placeholder.svg?height=150&width=200" alt="Pet Image 3">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Accordion -->
+            <div class="accordion-section">
+                <h3>Pet FAQ</h3>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">How often should I feed my pet?</div>
+                        <div class="accordion-content">
+                            <p>You should feed your digital pet at least twice a day to keep it happy and healthy.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Can my pet get sick?</div>
+                        <div class="accordion-content">
+                            <p>Yes, if you neglect your pet for too long, it might become sad or unresponsive. Regular interaction is key!</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">How do I know if my pet is happy?</div>
+                        <div class="accordion-content">
+                            <p>A happy pet will respond enthusiastically to your interactions and display a positive status message.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form validation section -->
+        <section class="form-section">
+            <h2>Register Your Pet</h2>
+            <form id="pet-form">
+                <div class="form-group">
+                    <label for="pet-name">Pet Name (required)</label>
+                    <input type="text" id="pet-name" required>
+                    <span class="error-message" id="name-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="owner-email">Your Email (required)</label>
+                    <input type="email" id="owner-email" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password (min 8 characters)</label>
+                    <input type="password" id="password" required>
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pet-type">Pet Type</label>
+                    <select id="pet-type">
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="bird">Bird</option>
+                        <option value="fish">Fish</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">Register Pet</button>
+                <div id="form-success" class="hidden">Pet registered successfully!</div>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>Created with ❤️ for your interactive web playground</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
